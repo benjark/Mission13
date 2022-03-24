@@ -7,14 +7,14 @@ namespace Mission13.Models
     {
         [Key]
         [Required]
-        public string FirstName { get; set; }
-        public string MiddleInitial { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public int Zip { get; set; }
-        public string Phone { get; set; }
-
+        public int BowlerID { get; set; }
+        public string BowlerFirstName { get; set; }
+        public string BowlerMiddleInit { get; set; }
+        public string BowlerLastName { get; set; }
+        public string BowlerAddress { get; set; }
+        public string BowlerCity { get; set; }
+        public string BowlerState { get; set; }
+        public string BowlerZip { get; set; }
+        public string BowlerPhoneNumber { get; set; }
     }
 }
