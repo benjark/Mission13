@@ -17,6 +17,7 @@ namespace Mission13.Models
         public string BowlerZip { get; set; }
         public string BowlerPhoneNumber { get; set; }
 
+        [Required]
         public int TeamID { get; set; }
     }
 }

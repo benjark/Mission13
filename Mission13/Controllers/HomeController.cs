@@ -22,14 +22,17 @@ namespace Mission13.Controllers
 
         public IActionResult Index()
         {
-            var blah = Repo.Bowlers
+            var bowling = Repo.Bowlers
                 //.Include(x => Bowler)
 
                 .ToList();
 
-            return View(blah);
+            return View(bowling);
         }
-
-
+        [HttpGet]
+        public IActionResult AddBowler()
+        {
+            return View();
+        }
     }
 }
