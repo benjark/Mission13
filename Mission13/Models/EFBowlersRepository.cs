@@ -6,13 +6,34 @@ namespace Mission13.Models
     public class EFBowlersRepository : IBowlersRepository
     {
 
-        private BowlingDbContext _context { get; set; }
+        private BowlingDbContext Context { get; set; }
 
         public EFBowlersRepository(BowlingDbContext temp)
         {
-            _context = temp;
+            Context = temp;
         }
 
-        public IQueryable<Bowler> Bowlers => _context.Bowlers;
+        public IQueryable<Bowler> Bowlers => Context.Bowlers;
+
+        public object FirstOrDefault(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveBowler(Bowler bowler) =>
+            Context.Update(bowler);
+            //Context.SaveChanges();
+
+        public void CreateBowler(Bowler bowler)
+        {
+            Context.Update(bowler);
+            _ = Context.SaveChanges();
+        }
+
+        public void DeleteBowler(Bowler bowler)
+        {
+            Context.Update(bowler);
+            Context.SaveChanges();
+        }
     }
 }

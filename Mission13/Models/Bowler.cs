@@ -19,5 +19,6 @@ namespace Mission13.Models
 
         [Required]
         public int TeamID { get; set; }
+        public Team Team { get; set; }
     }
 }

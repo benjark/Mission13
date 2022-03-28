@@ -13,8 +13,9 @@ namespace Mission13.Controllers
     public class HomeController : Controller
     {
         private IBowlersRepository Repo { get; set; }
+        
 
-        //Contructor
+        //Constructor
         public HomeController(IBowlersRepository temp)
         {
             Repo = temp;
@@ -32,7 +33,19 @@ namespace Mission13.Controllers
         [HttpGet]
         public IActionResult AddBowler()
         {
-            return View();
+            Bowler bowler = new Bowler();
+
+            return View(bowler);
+        }
+
+        [HttpPost]
+        public IActionResult AddBowler(Bowler x)
+        {
+
+            Repo.CreateBowler(x);
+            Repo.SaveBowler(x);
+
+            return RedirectToAction("Index");
         }
     }
 }
