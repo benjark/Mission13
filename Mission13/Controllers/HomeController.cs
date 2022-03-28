@@ -12,17 +12,17 @@ namespace Mission13.Controllers
 {
     public class HomeController : Controller
     {
-        private IBowlersRepository _repo { get; set; }
+        private IBowlersRepository Repo { get; set; }
 
         //Contructor
         public HomeController(IBowlersRepository temp)
         {
-            _repo = temp;
+            Repo = temp;
         }
 
         public IActionResult Index()
         {
-            var blah = _repo.Bowlers
+            var blah = Repo.Bowlers
                 //.Include(x => Bowler)
 
                 .ToList();
@@ -30,6 +30,6 @@ namespace Mission13.Controllers
             return View(blah);
         }
 
-        
+
     }
 }

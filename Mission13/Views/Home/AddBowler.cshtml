@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Add Bowler";
+}
+
+@model Bowler
+<br />
+
+<form method="post" class="border-dark c.solid">
+    <input type="hidden" asp-for="TeamID" />
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerFirstName">First Name</label>
+            </div>
+
+            <input asp-for="BowlerFirstName" />
+
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerMiddleInit">Middle Initial</label>
+            </div>
+            <input asp-for="BowlerMiddleInit" />
+
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerLastName">Last Name</label>
+            </div>
+            <input asp-for="BowlerLastName" />
+
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerAddress">Address</label>
+            </div>
+            <input asp-for="BowlerAddress" />
+
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerCity">City</label>
+            </div>
+            <input asp-for="BowlerCity" />
+
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerState">State</label>
+            </div>
+            <input asp-for="BowlerState" />
+
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerZip">ZIP Code</label>
+            </div>
+            <input asp-for="BowlerZip" />
+
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="BowlerPhoneNumber">Phone Number</label>
+            </div>
+            <input asp-for="BowlerPhoneNumber" />
+
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">Submit </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
