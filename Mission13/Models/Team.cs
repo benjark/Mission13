@@ -9,6 +9,6 @@ namespace Mission13.Models
         [Required]
         public int TeamID { get; set; }
 
-        public string BowlerID { get; set; }
+        //public string BowlerID { get; set; }
     }
 }

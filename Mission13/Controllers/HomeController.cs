@@ -51,8 +51,26 @@ namespace Mission13.Controllers
         [HttpGet]
         public IActionResult Delete(int bowlerid)
         {
-            Bowler bowl = Repo.Bowlers.Single(x => x.BowlerID == bowlerid);
+            var bowl = Repo.Bowlers.Single(x => x.BowlerID == bowlerid);
             Repo.DeleteBowler(bowl);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Edit(int bowlerid)
+        {
+            var bowl = Repo.Bowlers.Single(x => x.BowlerID == bowlerid);
+            //Team team = Repo.Teams.SingleOrDefault(x => x.TeamID == a);
+            
+            return View("AddBowler",bowl);
+
+        }
+
+        [HttpPost]
+        public IActionResult Edit (Bowler b)
+        {
+            //Bowler b = Repo.Bowlers.FirstOrDefault(x => x.BowlerID == bowlerid);
+            //b.Team = t;
+            Repo.SaveBowler(b);
             return RedirectToAction("Index");
         }
     }

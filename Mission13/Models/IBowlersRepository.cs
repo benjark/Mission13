@@ -6,6 +6,8 @@ namespace Mission13.Models
     public interface IBowlersRepository
     {
        IQueryable<Bowler> Bowlers { get; }
+        //Not sure about this bit
+        IQueryable<Team> Teams { get; }
 
         object FirstOrDefault(Func<object, bool> p);
 
