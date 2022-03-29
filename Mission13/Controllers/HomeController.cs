@@ -47,5 +47,13 @@ namespace Mission13.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Delete(int bowlerid)
+        {
+            Bowler bowl = Repo.Bowlers.Single(x => x.BowlerID == bowlerid);
+            Repo.DeleteBowler(bowl);
+            return RedirectToAction("Index");
+        }
     }
 }
