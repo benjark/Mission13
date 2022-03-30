@@ -54,10 +54,14 @@ namespace Mission13.Controllers
         [HttpPost]
         public IActionResult AddBowler(Bowler x)
         {
-
-            Repo.AddBowler(x);
-            Repo.SaveBowler(x);
-
+            if (x.BowlerID == 0)
+            {
+                Repo.AddBowler(x);
+            }
+            else
+            {
+                Repo.SaveBowler(x);
+            }
             return RedirectToAction("Index");
         }
 
@@ -76,13 +80,6 @@ namespace Mission13.Controllers
             
             return View("AddBowler",bowl);
 
-        }
-
-        [HttpPost]
-        public IActionResult Edit (Bowler b)
-        {
-            Repo.SaveBowler(b);
-            return RedirectToAction("Index");
         }
     }
 }

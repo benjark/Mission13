@@ -17,7 +17,7 @@ namespace Mission13.Components
     }
     public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedTeam = RouteData?.Values["team"];
+            ViewBag.SelectedTeam = RouteData?.Values["teamid"];
 
             var teams = repo.Teams;
              
