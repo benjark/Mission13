@@ -38,8 +38,8 @@
             <td>@b.BowlerPhoneNumber</td>
 
 
-            <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
-            <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
+            <td><a asp-controller="Home" asp-action="Edit" class="btn btn-info" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
+            <td><a asp-controller="Home" asp-action="Delete" class="btn btn-danger" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
         </tr>
         }
     </tbody>

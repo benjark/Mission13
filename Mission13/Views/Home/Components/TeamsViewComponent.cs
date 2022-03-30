@@ -17,11 +17,11 @@ namespace Mission13.Components
     }
     public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedTeam = RouteData?.Values["teamid"];
+            ViewBag.SelectedTeam = RouteData?.Values["team"];
 
-            var teams = repo.Teams;
+            var t = repo.Teams;
              
-            return View(teams);
+            return View(t);
         }
     }
 }
