@@ -18,14 +18,14 @@ namespace Mission13.Models
         //not sure about this
         public IQueryable<Team> Teams => Context.Teams;
 
-        public object FirstOrDefault(Func<object, bool> p)
-        {
-            throw new NotImplementedException();
-        }
+        //public object FirstOrDefault(Func<object, bool> p)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void SaveBowler(Bowler bowler)
         {
-            Context.Update(bowler);
+            //Context.Update(bowler);
             Context.SaveChanges();
         }
 
@@ -37,7 +37,7 @@ namespace Mission13.Models
 
         public void DeleteBowler(Bowler bowler)
         {
-            Context.Update(bowler);
+            Context.Remove(bowler);
             Context.SaveChanges();
         }
     }

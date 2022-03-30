@@ -9,7 +9,7 @@ namespace Mission13.Models
         //Not sure about this bit
         IQueryable<Team> Teams { get; }
 
-        object FirstOrDefault(Func<object, bool> p);
+        //object FirstOrDefault(Func<object, bool> p);
 
         public void SaveBowler(Bowler bowler);
         public void CreateBowler(Bowler bowler);
