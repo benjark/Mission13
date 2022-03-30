@@ -8,6 +8,8 @@ namespace Mission13.Models
         [Key]
         [Required]
         public int TeamID { get; set; }
+        public string TeamName { get; set; }
+        public int CaptainID { get; set; }
 
         //public string BowlerID { get; set; }
     }

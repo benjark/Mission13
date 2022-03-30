@@ -6,7 +6,7 @@
 <br />
 
 <form method="post" class="border-dark c.solid" asp-action="AddBowler">
-    <input type="hidden" asp-for="TeamID" />
+    <input type="hidden" asp-for="BowlerID" />
     <div class="container">
         <div class="row">
             <div class="col-2">
@@ -79,12 +79,33 @@
             </div>
             <input asp-for="BowlerPhoneNumber" />
 
+            <br />
+
 
         </div>
         <br />
         <div class="row">
             <div class="col-2">
-                <button type="submit" class="btn btn-primary">Submit </button>
+                <label asp-for="TeamID">Team Name: </label>
+            </div>
+            <select asp-for="TeamID">
+                <option value="1">Marlins</option>
+                <option value="2">Sharks</option>
+                <option value="3">Terrapins</option>
+                <option value="4">Barracudas</option>
+                <option value="5">Dolphins</option>
+                <option value="6">Orcas</option>
+                <option value="7">Manatees</option>
+                <option value="8">Swordfish</option>
+                <option value="9">Huckleberrys</option>
+                <option value="10">MintJuleps</option>
+            </select>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
         </div>

@@ -13,20 +13,33 @@ namespace Mission13.Controllers
     public class HomeController : Controller
     {
         private IBowlersRepository Repo { get; set; }
-        
+        private ITeamsRepository Repo2 { get; set; }
+
+        public int BowlerID { get; set; }
 
         //Constructor
-        public HomeController(IBowlersRepository temp)
+        public HomeController(IBowlersRepository temp, ITeamsRepository temp2)
         {
             Repo = temp;
+            Repo2 = temp2;
         }
-
-        public IActionResult Index()
+        
+        public IActionResult Index(int teamid)
         {
             var bowling = Repo.Bowlers
                 //.Include(x => Bowler)
-
+                .Where(b => b.TeamID == teamid || teamid == 0)
                 .ToList();
+
+            if (teamid == 0)
+            {
+                ViewBag.Header = "All Teams";
+
+            }
+            else
+            {
+                ViewBag.Header = Repo2.Teams.Single(x => x.TeamID == teamid).TeamName;
+            }
 
             return View(bowling);
         }
@@ -42,7 +55,7 @@ namespace Mission13.Controllers
         public IActionResult AddBowler(Bowler x)
         {
 
-            Repo.CreateBowler(x);
+            Repo.AddBowler(x);
             Repo.SaveBowler(x);
 
             return RedirectToAction("Index");
@@ -68,8 +81,6 @@ namespace Mission13.Controllers
         [HttpPost]
         public IActionResult Edit (Bowler b)
         {
-            //Bowler b = Repo.Bowlers.FirstOrDefault(x => x.BowlerID == bowlerid);
-            //b.Team = t;
             Repo.SaveBowler(b);
             return RedirectToAction("Index");
         }

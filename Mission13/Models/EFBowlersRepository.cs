@@ -25,18 +25,40 @@ namespace Mission13.Models
 
         public void SaveBowler(Bowler bowler)
         {
-            //Context.Update(bowler);
-            Context.SaveChanges();
+            if (bowler.BowlerID == 0)
+            {
+                var max = Context.Bowlers.Max(x => x.BowlerID);
+                bowler.BowlerID = (max + 1);
+                Context.Update(bowler);
+                Context.SaveChanges();
+            }
+            else
+            {
+                Context.Update(bowler);
+                Context.SaveChanges();
+            }
         }
 
-        public void CreateBowler(Bowler bowler)
+        public void AddBowler(Bowler bowler)
         {
-            Context.Update(bowler);
-            _ = Context.SaveChanges();
+            if (bowler.BowlerID == 0)
+            {
+                var max = Context.Bowlers.Max(x => x.BowlerID);
+                bowler.BowlerID = (max + 1);
+                Context.Add(bowler);
+                Context.SaveChanges();
+            }
+            else
+            {
+                Context.Add(bowler);
+                Context.SaveChanges();
+            }
+            
         }
 
         public void DeleteBowler(Bowler bowler)
         {
+
             Context.Remove(bowler);
             Context.SaveChanges();
         }

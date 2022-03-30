@@ -12,7 +12,7 @@ namespace Mission13.Models
         //object FirstOrDefault(Func<object, bool> p);
 
         public void SaveBowler(Bowler bowler);
-        public void CreateBowler(Bowler bowler);
+        public void AddBowler(Bowler bowler);
         public void DeleteBowler(Bowler bowler);
         
     }
